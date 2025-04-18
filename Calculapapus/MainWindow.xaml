@@ -1,0 +1,86 @@
+﻿<Window x:Class="Calculapapus.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowStyle="SingleBorderWindow" ResizeMode="NoResize"
+        Title="Calculadora Perrona" Height="550" Width="600" x:Name="MainWindowControl">
+
+    <Grid x:Name="MainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Pantalla -->
+        <TextBox x:Name="Pantalla" Grid.Row="0" HorizontalAlignment="Stretch" Height="60" Margin="10" FontSize="26" TextAlignment="Right" IsReadOnly="True" Text="0"/>
+
+        <!-- Botones principales en el Grid comprimido -->
+        <Grid Grid.Row="1" Margin="10" x:Name="BotonGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Fila 1 -->
+            <Button Content="%" Grid.Row="0" Grid.Column="0" x:Name="BotonPorcentaje" Click="BotonPorcentaje_Click" />
+            <Button Content="CE" Grid.Row="0" Grid.Column="1" Click="BotonClearEntry_Click" />
+            <Button Content="C" Grid.Row="0" Grid.Column="2" Click="BotonClear_Click" />
+            <Button Content="⌫" Grid.Row="0" Grid.Column="3" Click="BotonBorrarUltimo_Click" />
+            <Button Content="A" Grid.Row="0" Grid.Column="4" x:Name="BotonA" Click="BotonNumero_Click" Height="60"/>
+
+            <!-- Fila 2 -->
+            <Button Content="1/x" Grid.Row="1" Grid.Column="0" x:Name="BotonInverso" Click="BotonInverso_Click" />
+            <Button Content="x²" Grid.Row="1" Grid.Column="1" x:Name="BotonCuadrado" Click="BotonCuadrado_Click" />
+            <Button Content="√" Grid.Row="1" Grid.Column="2" x:Name="BotonRaizCuadrada" Click="BotonRaizCuadrada_Click" />
+            <Button Content="÷" Grid.Row="1" Grid.Column="3" Click="BotonOperacion_Click" />
+            <Button Content="B" Grid.Row="1" Grid.Column="4" x:Name="BotonB" Click="BotonNumero_Click" Height="60"/>
+
+            <!-- Fila 3 -->
+            <Button Content="7" Grid.Row="2" Grid.Column="0" x:Name="Boton7" Click="BotonNumero_Click" />
+            <Button Content="8" Grid.Row="2" Grid.Column="1" x:Name="Boton8" Click="BotonNumero_Click" />
+            <Button Content="9" Grid.Row="2" Grid.Column="2" x:Name="Boton9" Click="BotonNumero_Click" />
+            <Button Content="x" Grid.Row="2" Grid.Column="3" Click="BotonOperacion_Click" />
+            <Button Content="C" Grid.Row="2" Grid.Column="4" x:Name="BotonC" Click="BotonNumero_Click" Height="60"/>
+
+            <!-- Fila 4 -->
+            <Button Content="4" Grid.Row="3" Grid.Column="0" x:Name="Boton4" Click="BotonNumero_Click" />
+            <Button Content="5" Grid.Row="3" Grid.Column="1" x:Name="Boton5" Click="BotonNumero_Click" />
+            <Button Content="6" Grid.Row="3" Grid.Column="2" x:Name="Boton6" Click="BotonNumero_Click" />
+            <Button Content="-" Grid.Row="3" Grid.Column="3" Click="BotonOperacion_Click" />
+            <Button Content="D" Grid.Row="3" Grid.Column="4" x:Name="BotonD" Click="BotonNumero_Click" Height="60"/>
+
+            <!-- Fila 5 -->
+            <Button Content="1" Grid.Row="4" Grid.Column="0" x:Name="Boton1" Click="BotonNumero_Click" />
+            <Button Content="2" Grid.Row="4" Grid.Column="1" x:Name="Boton2" Click="BotonNumero_Click" />
+            <Button Content="3" Grid.Row="4" Grid.Column="2" x:Name="Boton3" Click="BotonNumero_Click" />
+            <Button Content="+" Grid.Row="4" Grid.Column="3" Click="BotonOperacion_Click" />
+            <Button Content="E" Grid.Row="4" Grid.Column="4" x:Name="BotonE" Click="BotonNumero_Click" Height="60"/>
+
+            <!-- Fila 6 -->
+            <Button Content="0" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Click="BotonNumero_Click" />
+            <Button Content="." Grid.Row="5" Grid.Column="2" Click="BotonPunto_Click" />
+            <Button Content="=" Grid.Row="5" Grid.Column="3" Click="BotonIgual_Click" />
+            <Button Content="F" Grid.Row="5" Grid.Column="4" x:Name="BotonF" Click="BotonNumero_Click" Height="60"/>
+        </Grid>
+
+        <!-- Fila para botones Binario, Dec, Hex -->
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+            <Button Content="Binario" Width="100" Height="50" Margin="5" Click="BotonBinario_Click"/>
+            <Button Content="Dec" Width="100" Height="50" Margin="5" Click="BotonDecimal_Click"/>
+            <Button Content="Hex" Width="100" Height="50" Margin="5" Click="BotonHexadecimal_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
+
+
